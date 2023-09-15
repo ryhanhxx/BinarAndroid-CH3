@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.ch.activityfragmentexample.R
 import com.ch.activityfragmentexample.databinding.FragmentThreeBinding
 import com.ch.activityfragmentexample.databinding.FragmentTwoBinding
+import com.ch.activityfragmentexample.presentation.otheractivity.OtherActivity
 
 class FragmentThree : Fragment() {
 
@@ -22,5 +23,16 @@ class FragmentThree : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
+        setClickListener()
+    }
+
+    private fun setClickListener() {
+        binding.btnNavigateOther.setOnClickListener {
+            navigateToOtherActivity()
+        }
+    }
+
+    private fun navigateToOtherActivity() {
+        OtherActivity.startActivity(requireContext(),"Hermas",27)
     }
 }
