@@ -1,4 +1,4 @@
-package com.ch.activityfragmentexample.presentation.fragmentone
+package com.ch.activityfragmentexample.presentation.avangerslist
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,18 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.ch.activityfragmentexample.R
-import com.ch.activityfragmentexample.databinding.FragmentOneBinding
+import com.ch.activityfragmentexample.databinding.FragmentAvangerListBinding
 import com.ch.activityfragmentexample.model.Person
 
-class FragmentOne : Fragment() {
+class AvangersListFragment : Fragment() {
 
-    private lateinit var binding: FragmentOneBinding
+    private lateinit var binding: FragmentAvangerListBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentOneBinding.inflate(inflater,container,false)
+        binding = FragmentAvangerListBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -51,7 +50,7 @@ class FragmentOne : Fragment() {
                 })*/
 
         //safeargs
-        val action = FragmentOneDirections.actionFragmentOneToFragmentTwo(person)
+        val action = AvangersListFragmentDirections.navigateToDetail(person)
         findNavController().navigate(action)
     }
 

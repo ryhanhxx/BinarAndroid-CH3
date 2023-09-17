@@ -10,7 +10,6 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import coil.load
 import com.ch.activityfragmentexample.R
-import com.ch.activityfragmentexample.databinding.FragmentOneBinding
 import com.ch.activityfragmentexample.databinding.FragmentTwoBinding
 import com.ch.activityfragmentexample.model.Person
 

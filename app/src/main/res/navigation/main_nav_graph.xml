@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/fragmentOne">
+    app:startDestination="@id/avangerList">
 
     <fragment
-        android:id="@+id/fragmentOne"
-        android:name="com.ch.activityfragmentexample.presentation.fragmentone.FragmentOne"
-        android:label="fragment_one"
-        tools:layout="@layout/fragment_one" >
+        android:id="@+id/avangerList"
+        android:name="com.ch.activityfragmentexample.presentation.avangerslist.AvangersListFragment"
+        android:label="avanger_list"
+        tools:layout="@layout/fragment_avanger_list" >
         <action
-            android:id="@+id/action_fragmentOne_to_fragmentTwo"
+            android:id="@+id/navigateToDetail"
             app:destination="@id/fragmentTwo" />
     </fragment>
     <fragment
