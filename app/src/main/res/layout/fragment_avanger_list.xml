@@ -6,7 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".presentation.avangerslist.AvangersListFragment">
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_avengers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <!--<LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -27,6 +31,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Only Navigate" />
-    </LinearLayout>
+    </LinearLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

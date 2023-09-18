@@ -6,12 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.ch.activityfragmentexample.data.AvengerListAdapter
+import com.ch.activityfragmentexample.data.AvengersDataSourceImpl
 import com.ch.activityfragmentexample.databinding.FragmentAvangerListBinding
 import com.ch.activityfragmentexample.model.Person
 
 class AvangersListFragment : Fragment() {
 
     private lateinit var binding: FragmentAvangerListBinding
+
+    private val adapter: AvengerListAdapter by lazy {
+        AvengerListAdapter {
+            navigateToFragmentTwo(it)
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,17 +31,23 @@ class AvangersListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setClickListener()
+        /*setClickListener()*/
+        setupRecyclerview()
     }
 
-    private fun setClickListener() {
+    private fun setupRecyclerview() {
+        binding.rvAvengers.adapter = adapter
+        binding.rvAvengers.layoutManager = LinearLayoutManager(requireContext())
+        adapter.setData(AvengersDataSourceImpl().getAvengersData())
+    }
+    /*private fun setClickListener() {
         binding.btnNavigate.setOnClickListener {
             navigateToFragmentTwo()
         }
         binding.btnSendDataNavigate.setOnClickListener {
             navigateToFragmentTwo(getPerson())
         }
-    }
+    }*/
 
     private fun getPerson(): Person? {
         return Person(
