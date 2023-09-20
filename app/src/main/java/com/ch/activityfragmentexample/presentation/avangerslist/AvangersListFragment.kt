@@ -40,14 +40,7 @@ class AvangersListFragment : Fragment() {
         binding.rvAvengers.layoutManager = LinearLayoutManager(requireContext())
         adapter.setData(AvengersDataSourceImpl().getAvengersData())
     }
-    /*private fun setClickListener() {
-        binding.btnNavigate.setOnClickListener {
-            navigateToFragmentTwo()
-        }
-        binding.btnSendDataNavigate.setOnClickListener {
-            navigateToFragmentTwo(getPerson())
-        }
-    }*/
+
 
     private fun getPerson(): Person? {
         return Person(
@@ -59,12 +52,6 @@ class AvangersListFragment : Fragment() {
     }
 
     private fun navigateToFragmentTwo(person: Person? = null) {
-        //bundle
-        /*        findNavController().navigate(R.id.action_fragmentOne_to_fragmentTwo,Bundle().apply {
-                    putParcelable(FragmentTwo.ARGS_PERSON,person)
-                })*/
-
-        //safeargs
         val action = AvangersListFragmentDirections.navigateToDetail(person)
         findNavController().navigate(action)
     }
